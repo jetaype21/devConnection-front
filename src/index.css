@@ -1,13 +1,23 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800&display=swap");
+
+:root {
+  --color-gray: #b8b0b0;
+  --font__josefi-sans: "Josefin Sans", sans-serif; /* Textos*/
+  --font__lexend-deca: "Lexend Deca", sans-serif; /* Titulos*/
+  --bg__bg-primary: #051026;
+  --btn__color: #f0ce26;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all ease-in 0.05s;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font__lexend-deca);
 }

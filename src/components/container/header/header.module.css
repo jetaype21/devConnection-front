@@ -1,0 +1,41 @@
+.container {
+  color: white;
+  width: 100%;
+  height: calc(100vh - 90px);
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+  z-index: 50;
+  /* background-image: url("../../../../public/images/bg-header.svg"); */
+}
+
+.container > h1 {
+  width: 70%;
+  font-weight: 300;
+}
+
+.name__company {
+  font-size: 3rem;
+  margin-top: 20px;
+  display: block;
+  font-weight: bold;
+  font-family: var(--font__josefi-sans);
+}
+
+.img__header {
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  bottom: -15vh;
+  right: -10vw;
+  z-index: -1;
+}
+
+@media screen and (min-width: 768px) {
+  .img__header {
+    height: 500px;
+    width: 500px;
+    bottom: -10vh;
+    right: -5vw;
+  }
+}

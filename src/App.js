@@ -1,23 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import axios from "axios";
+import { Navigate, Route, Routes } from "react-router-dom";
+import Home from "./pages/home/Home";
+import Signup from "./pages/Signup/Signup";
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  const getUser = async () => {
+    try {
+      const url = "http://localhost:8080/auth/login/success";
+      const { data } = await axios.get(url, {
+        method: "GET",
+        withCredentials: true,
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+        },
+      });
+
+      if (data.error) throw new Error("authentication has been failed!");
+
+      setUser(data.user);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
+
+  //! USAR USER Y LA SECCION DE USER._JSON
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Navbar user={user} /> */}
+      {console.log("user home: ", user)}
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        {/* <Route
+          exact
+          path="/login"
+          element={user ? <Navigate to="/" /> : <Login />}
+        /> */}
+        <Route
+          path="/login"
+          element={user ? <Navigate to="/" /> : <Signup />}
+        />
+      </Routes>
     </div>
   );
 }
