@@ -7,6 +7,13 @@ const Header = () => {
     <header className={styles.container}>
       <h1>
         Programación en un solo lugar <br />
+        <p className={styles.text_intro}>
+          <br />
+          Navega por nuestras recomendaciones y encuentra soluciones que se
+          adapten a tus necesidades, tenemos todo cubierto. <br />
+          <br />
+          <i> ¡Bienvenido! </i>
+        </p>
         <code className={styles.name__company}>DevConnection</code>
       </h1>
 

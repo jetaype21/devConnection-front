@@ -1,0 +1,44 @@
+.container {
+  /* 
+    14 = tamaño de letra más pequeño
+    18 = tamaño de letra más grande
+    300 = tamaño de viewport más pequeño
+    1400 = tamaño de viewport más grande
+  */
+  width: 100%;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  font-size: calc(16px + (24 - 16) * ((100vw - 300px) / (1600 - 300)));
+  /* font-size: calc(12px + (24 -12) * ((100vw - 200px) / (1600 - 200))); */
+}
+
+.container section {
+  min-height: 250px;
+  border-radius: 10px;
+  padding: 15px 20px;
+  border: thin solid var(--btn__color);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  font-family: var(--font__josefi-sans);
+  font-weight: 400;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.container section p {
+  color: var(--color-gray);
+  padding-right: 2rem;
+}
+
+.container a {
+  display: flex;
+  gap: 1rem;
+  color: var(--btn__color);
+  text-decoration: none;
+  align-items: center;
+  justify-content: flex-end;
+  font-style: italic;
+}

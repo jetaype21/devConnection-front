@@ -1,10 +1,6 @@
 import React, { useRef } from "react";
 import styles from "./menu.module.css";
 import { IoCloseSharp } from "react-icons/io5";
-import NewLink from "../../smallComponents/newLink/NewLink";
-import Boton from "../../smallComponents/boton/Boton";
-import BotonGoogle from "../../smallComponents/boton/BotonGoogle";
-import { rutas } from "../../../assets/menu";
 import MenuList from "./MenuList";
 
 const Menu = ({ toogleMenu, showMenu, isMobile }) => {

@@ -4,6 +4,7 @@ import axios from "axios";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Signup from "./pages/Signup/Signup";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -50,6 +51,7 @@ function App() {
           path="/login"
           element={user ? <Navigate to="/" /> : <Signup />}
         />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

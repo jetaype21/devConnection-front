@@ -31,6 +31,13 @@
   z-index: -1;
 }
 
+.container .text_intro {
+  color: var(--color-gray);
+  font-size: calc(16px + (24 - 16) * ((100vw - 300px) / (1800 - 300)));
+  max-width: 700px;
+  width: 70%;
+}
+
 @media screen and (min-width: 768px) {
   .img__header {
     height: 500px;
