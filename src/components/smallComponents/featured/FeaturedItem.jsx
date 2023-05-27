@@ -7,7 +7,7 @@ const FeaturedItem = ({ item }) => {
     <section>
       <h3 className={styles.category_title}>{item.tool_name}</h3>
       <p>{item.tool_description}</p>
-      <Link href="#">
+      <Link href="/tools">
         {" "}
         Explorar <AiOutlineArrowRight />{" "}
       </Link>

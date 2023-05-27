@@ -5,7 +5,7 @@
   width: 100vw;
   height: 90px;
   padding: 0 10px;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 60;
   background-color: var(--bg__bg-primary);

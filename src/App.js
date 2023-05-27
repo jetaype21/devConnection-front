@@ -5,6 +5,8 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Signup from "./pages/Signup/Signup";
 import NotFound from "./pages/NotFound/NotFound";
+import Navbar from "./components/container/navbar/Navbar";
+import FooterHome from "./components/container/footerHome/FooterHome";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -40,6 +42,7 @@ function App() {
     <div className="App">
       {/* <Navbar user={user} /> */}
       {console.log("user home: ", user)}
+      <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
         {/* <Route
@@ -47,12 +50,14 @@ function App() {
           path="/login"
           element={user ? <Navigate to="/" /> : <Login />}
         /> */}
+
         <Route
           path="/login"
           element={user ? <Navigate to="/" /> : <Signup />}
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <FooterHome />
     </div>
   );
 }

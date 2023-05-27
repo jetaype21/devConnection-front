@@ -1,6 +1,5 @@
 import BodyHome from "../../components/container/BodyHome/BodyHome";
 import Header from "../../components/container/header/Header";
-import Navbar from "../../components/container/navbar/Navbar";
 import Featured from "../../components/smallComponents/featured/Featured";
 import styles from "./styles.module.css";
 
@@ -11,7 +10,6 @@ function Home() {
 
   return (
     <div className={styles.container}>
-      <Navbar />
       <Header />
       <BodyHome>
         <Featured />
