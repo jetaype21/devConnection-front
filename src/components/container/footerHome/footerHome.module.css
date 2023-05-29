@@ -4,6 +4,7 @@
   padding: 2rem;
   background-color: #031b81;
   min-height: 60vh;
+  overflow: hidden;
 }
 
 .footer_links {

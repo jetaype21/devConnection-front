@@ -1,11 +1,11 @@
 .container {
   color: white;
   width: 100%;
-  height: calc(100vh - 90px);
+  min-height: calc(100vh - 90px);
   position: relative;
-  overflow: hidden;
   padding: 1rem;
   z-index: 50;
+  overflow: hidden;
   /* background-image: url("../../../../public/images/bg-header.svg"); */
 }
 

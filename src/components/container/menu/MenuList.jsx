@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./menu.module.css";
 import Boton from "../../smallComponents/boton/Boton";
-import BotonGoogle from "../../smallComponents/boton/BotonGoogle";
 import NewLink from "../../smallComponents/newLink/NewLink";
 import { rutas } from "../../../assets/menu";
 
@@ -22,7 +21,7 @@ const MenuList = ({ isMobile }) => {
         ))}
       </section>
 
-      <Boton />
+      <Boton text={"Conectar"} />
     </section>
   );
 };

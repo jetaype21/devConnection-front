@@ -3,7 +3,7 @@
   min-height: calc(100vh - 90px);
   background-color: var(--bg__bg-primary);
   position: relative;
-  overflow-x: hidden;
+  /* overflow: hidden; */
   padding: 15px;
   padding-top: 2rem;
   color: var(--color-gray);

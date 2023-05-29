@@ -1,4 +1,4 @@
-export const featureds = [
+const featureds = [
   {
     tool_name: "inspiración de diseño",
     tool_description:
@@ -45,3 +45,5 @@ export const featureds = [
       "lograr realizar más tareas y en menos tiempo, aumentando la eficiencia y el rendimiento.",
   },
 ];
+
+export default featureds;

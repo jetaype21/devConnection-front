@@ -6,7 +6,7 @@
   opacity: 0.3;
 
   position: absolute;
-  bottom: -150;
+  bottom: 0;
 
   animation: burbujas 16s linear infinite;
 }

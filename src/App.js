@@ -7,33 +7,22 @@ import Signup from "./pages/Signup/Signup";
 import NotFound from "./pages/NotFound/NotFound";
 import Navbar from "./components/container/navbar/Navbar";
 import FooterHome from "./components/container/footerHome/FooterHome";
+import { getUser } from "./utils/requestHttp";
+import { sharingInformationService } from "./services/shring-information.service";
 
 function App() {
   const [user, setUser] = useState(null);
 
-  const getUser = async () => {
-    try {
-      const url = "http://localhost:8080/auth/login/success";
-      const { data } = await axios.get(url, {
-        method: "GET",
-        withCredentials: true,
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-        },
-      });
-
-      if (data.error) throw new Error("authentication has been failed!");
-
-      setUser(data.user);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  const [notFund, setNotFund] = useState(false);
 
   useEffect(() => {
-    getUser();
+    const subscription$ = sharingInformationService.getSubject();
+    subscription$.subscribe((data) => {
+      setNotFund(data);
+    });
+    const user = getUser();
+    console.log("recibiendo");
+    setUser(user);
   }, []);
 
   //! USAR USER Y LA SECCION DE USER._JSON
@@ -42,7 +31,7 @@ function App() {
     <div className="App">
       {/* <Navbar user={user} /> */}
       {console.log("user home: ", user)}
-      <Navbar />
+      {!notFund && <Navbar />}
       <Routes>
         <Route exact path="/" element={<Home />} />
         {/* <Route
@@ -57,7 +46,7 @@ function App() {
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <FooterHome />
+      {!notFund && <FooterHome />}
     </div>
   );
 }

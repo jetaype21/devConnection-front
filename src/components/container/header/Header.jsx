@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./header.module.css";
 import Burbujas from "../../smallComponents/burbujas/Burbujas";
+import BotonGoogle from "../../smallComponents/boton/BotonGoogle";
 
 const Header = () => {
   return (
@@ -14,7 +15,10 @@ const Header = () => {
           <br />
           <i> ¡Bienvenido! </i>
         </p>
-        <code className={styles.name__company}>DevConnection</code>
+        <code className={styles.name__company} style={{ marginBottom: "8px" }}>
+          DevConnection
+        </code>
+        <BotonGoogle />
       </h1>
 
       <img src="./images/bg-header.svg" alt="" className={styles.img__header} />

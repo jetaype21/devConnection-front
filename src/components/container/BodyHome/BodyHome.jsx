@@ -1,6 +1,18 @@
 import styles from "./body.module.css";
+import Featured from "../../smallComponents/featured/Featured";
+import { useEffect, useState } from "react";
+import featureds from "../../../assets/featured";
 
-const BodyHome = ({ children }) => {
+const BodyHome = () => {
+  const [selects, setSelects] = useState([]);
+  const limit = Math.floor(Math.random() * 7);
+  let select = selects.splice(limit, 2);
+  // console.log(select);
+
+  useEffect(() => {
+    setSelects(featureds);
+  }, []);
+
   return (
     <main className={styles.container}>
       <section className={styles.container__content}>
@@ -8,7 +20,7 @@ const BodyHome = ({ children }) => {
           <h2 className={styles.title__seccion}>
             Ahorra tiempo a la hora de buscar recursos
           </h2>
-
+          {console.log(select)}
           <p className={styles.container__p}>
             No pierdas más tiempo buscando herramientas por tu cuenta, En{" "}
             <span className={styles.devTitle}>Dev Connection</span> hemos hecho
@@ -26,7 +38,9 @@ const BodyHome = ({ children }) => {
             </cite>
           </p>
         </article>
-        <article className={styles.container_featured}>{children}</article>
+        <article className={styles.container_featured}>
+          <Featured items={select} />
+        </article>
       </section>
     </main>
   );

@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg__bg-primary);
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.container img {
+  width: 70%;
+  height: 50%;
+  max-width: 700px;
+}
+
+.container a {
+  background-color: var(--btn__color);
+  border: thin solid black;
+  width: max-content;
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--color__blue);
+  cursor: pointer;
+  position: relative;
+  z-index: 99;
+}

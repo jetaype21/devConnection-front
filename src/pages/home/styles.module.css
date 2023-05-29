@@ -1,5 +1,6 @@
 .container {
   width: 100vw;
+  /* overflow-x: hidden; */
   background-color: var(--bg__bg-primary);
   margin-top: 90px;
 }
