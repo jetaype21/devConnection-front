@@ -77,6 +77,7 @@
 
 .body__container {
   display: flex;
+  justify-self: end;
   width: 100%;
   padding: 1rem;
 }
@@ -91,7 +92,7 @@
   flex-direction: row;
   justify-content: end;
   align-items: center;
-  gap: 3rem;
+  gap: 1rem;
 }
 
 .link__container {
@@ -113,7 +114,13 @@
   color: var(--color-gray);
 }
 
+.link__container_pc {
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+}
+
 .link__container_pc > a {
-  margin-left: 20px;
+  margin-left: 15px;
   color: white;
 }

@@ -7,8 +7,10 @@ import { BiMenu } from "react-icons/bi";
 import useScreenSize from "../../../hooks/useScreenSize";
 import Menu from "../menu/Menu";
 import MenuList from "../menu/MenuList";
+import { DataAuth } from "../../../context/authContext";
 
 const Navbar = () => {
+  const { user } = DataAuth();
   const [dimensions] = useScreenSize();
   const [isMobile, setIsMobile] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
@@ -28,13 +30,19 @@ const Navbar = () => {
 
   return (
     <nav className={styles.container}>
-      <Link to={"/"}>
-        <img
-          src="./images/logoDevConnect.png"
-          alt="logo DevConnection"
-          className={styles.logo_img}
-        />
-      </Link>
+      {!user ? (
+        <Link to={"/"}>
+          <img
+            src="./images/logoDevConnect.png"
+            alt="logo DevConnection"
+            className={styles.logo_img}
+          />
+        </Link>
+      ) : (
+        <Link to={"/"}>
+          <h3>{user.user_name}</h3>
+        </Link>
+      )}
 
       {isMobile && (
         <BiMenu className={styles.icon} onClick={() => toogleMenu(true)} />

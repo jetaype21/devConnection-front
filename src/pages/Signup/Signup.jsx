@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 
 function Signup() {
   const googleAuth = () => {
-    window.open("http://localhost:8080/auth/google/callback", "_self");
+    window.open("http://localhost:8080/api/auth/google/callback", "_self");
   };
   return (
     <div className={styles.container}>

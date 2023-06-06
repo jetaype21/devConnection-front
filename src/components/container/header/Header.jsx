@@ -2,8 +2,17 @@ import React from "react";
 import styles from "./header.module.css";
 import Burbujas from "../../smallComponents/burbujas/Burbujas";
 import BotonGoogle from "../../smallComponents/boton/BotonGoogle";
+import Boton from "../../smallComponents/boton/Boton";
+import { DataAuth } from "../../../context/authContext";
 
 const Header = () => {
+  const { user } = DataAuth();
+  // const [userInit, setUserInit] = useState(null);
+
+  // useEffect(() => {
+  //   setUserInit(user);
+  // }, []);
+
   return (
     <header className={styles.container}>
       <h1>
@@ -18,7 +27,12 @@ const Header = () => {
         <code className={styles.name__company} style={{ marginBottom: "8px" }}>
           DevConnection
         </code>
-        <BotonGoogle />
+        {console.log("user", user)}
+        {!user?.user_name ? (
+          <BotonGoogle />
+        ) : (
+          <Boton to={"/tools"} text={"Explorar herramientas"} />
+        )}
       </h1>
 
       <img src="./images/bg-header.svg" alt="" className={styles.img__header} />

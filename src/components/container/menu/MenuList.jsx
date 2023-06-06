@@ -21,7 +21,7 @@ const MenuList = ({ isMobile }) => {
         ))}
       </section>
 
-      <Boton text={"Conectar"} />
+      <Boton to={"/"} text={"Conectar"} />
     </section>
   );
 };

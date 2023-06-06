@@ -10,7 +10,6 @@ function Home() {
   // };
 
   useEffect(() => {
-    console.log("enviando desde hombe");
     sharingInformationService.setSubject(false);
   }, []);
 
