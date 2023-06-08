@@ -8,6 +8,7 @@ import useScreenSize from "../../../hooks/useScreenSize";
 import Menu from "../menu/Menu";
 import MenuList from "../menu/MenuList";
 import { DataAuth } from "../../../context/authContext";
+import LogoutGoogle from "../../smallComponents/boton/LogoutGoogle";
 
 const Navbar = () => {
   const { user } = DataAuth();
@@ -30,7 +31,7 @@ const Navbar = () => {
 
   return (
     <nav className={styles.container}>
-      {!user ? (
+      {!user?.user_name ? (
         <Link to={"/"}>
           <img
             src="./images/logoDevConnect.png"
@@ -39,9 +40,12 @@ const Navbar = () => {
           />
         </Link>
       ) : (
-        <Link to={"/"}>
-          <h3>{user.user_name}</h3>
-        </Link>
+        <article className={styles.container_user}>
+          <Link to={"/"}>
+            <h3 className={styles.text_user}>{user.user_name}</h3>
+          </Link>
+          <LogoutGoogle />
+        </article>
       )}
 
       {isMobile && (

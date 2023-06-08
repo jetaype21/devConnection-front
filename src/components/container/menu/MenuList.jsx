@@ -21,7 +21,11 @@ const MenuList = ({ isMobile }) => {
         ))}
       </section>
 
-      <Boton to={"/"} text={"Conectar"} />
+      <Boton
+        to={"https://www.linkedin.com/in/jetaypedev/"}
+        text={"Conectar"}
+        other={true}
+      />
     </section>
   );
 };

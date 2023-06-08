@@ -1,16 +1,22 @@
 import styles from "./body.module.css";
 import Featured from "../../smallComponents/featured/Featured";
 import { useEffect, useState } from "react";
-import featureds from "../../../assets/featured";
+import { helpHttp } from "../../../utils/helpHttp";
+import { baseApiUrl } from "../../../utils/keysSession";
 
 const BodyHome = () => {
+  const { get } = helpHttp();
+
   const [selects, setSelects] = useState([]);
   const limit = Math.floor(Math.random() * 7);
   let select = selects.splice(limit, 2);
   // console.log(select);
 
   useEffect(() => {
-    setSelects(featureds);
+    // get(`${baseApiUrl}/tools`).then((res) => setSelects(res.data));
+    get(`${baseApiUrl}/tools`).then((res) => setSelects(res.data.data));
+
+    // setSelects(featureds);
   }, []);
 
   return (
@@ -20,7 +26,6 @@ const BodyHome = () => {
           <h2 className={styles.title__seccion}>
             Ahorra tiempo a la hora de buscar recursos
           </h2>
-          {console.log(select)}
           <p className={styles.container__p}>
             No pierdas más tiempo buscando herramientas por tu cuenta, En{" "}
             <span className={styles.devTitle}>Dev Connection</span> hemos hecho

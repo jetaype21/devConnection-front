@@ -29,31 +29,30 @@ export const AuthContextProvider = ({ children }) => {
   // useEffect(() => {
   useEffect(() => {
     const unSuscribe = onAuthStateChanged(auth, (currentUser) => {
-      // let user = {
-      //   user_name: currentUser?.displayName,
-      //   user_email: currentUser?.email,
-      //   user_account_id: currentUser?.uid,
-      // };
+      let user = {
+        user_name: currentUser?.displayName,
+        user_email: currentUser?.email,
+        user_account_id: currentUser?.uid,
+      };
 
-      // if (user.user_name) {
-      //   console.log("dentro del if");
-      //   post(`${baseApiUrl}/auth`, {
-      //     user_email: user.user_email,
-      //     user_account_id: user.user_account_id,
-      //   })
-      //     .then((res) => {
-      //       setUser({
-      //         ...user,
-      //         ...res.data?.user,
-      //         token: res.data?.token,
-      //       });
-      //     })
-      //     .catch((err) => {
-      //       // throw new Error(err);
-      //     });
-      // }
+      if (user.user_name) {
+        post(`${baseApiUrl}/auth`, {
+          user_email: user.user_email,
+          user_account_id: user.user_account_id,
+        })
+          .then((res) => {
+            setUser({
+              ...user,
+              ...res.data?.user,
+              token: res.data?.token,
+            });
+          })
+          .catch((err) => {
+            // throw new Error(err);
+          });
+      }
 
-      setUser({ user_name: "nombre estatico" });
+      setUser(user);
     });
 
     return () => {

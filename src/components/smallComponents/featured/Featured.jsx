@@ -3,21 +3,24 @@ import styles from "./featured.module.css";
 
 const Featured = ({ items }) => {
   const text = {
-    tool_name: "Descubrir más herramientas",
-    tool_description:
+    category_name: "Descubrir más herramientas",
+    category_description:
       "Vea todas las categorias que te tenemos prepado para ayudarte.",
+    category_slug: "",
   };
 
   const defaultFeatureds = [
     {
-      tool_name: "inspiración de diseño",
-      tool_description:
+      category_name: "inspiración de diseño",
+      category_description:
         "proceso creativo para encontrar ideas y conceptos para proyectos de diseño",
+      category_slug: "inspiracion-de-diseno",
     },
     {
-      tool_name: "diseño online",
-      tool_description:
+      category_name: "diseño online",
+      category_description:
         "creación de contenido visual a través de herramientas digitales para su uso en internet.",
+      category_slug: "category=diseno-online",
     },
   ];
 

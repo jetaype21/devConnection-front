@@ -1,24 +1,36 @@
 import { NavLink } from "react-router-dom";
 import styles from "./toolsMenu.module.css";
+import { DataAuth } from "../../../context/authContext";
 
 const ToolsMenu = () => {
-  const toolsLinks = [
-    {
-      name: "Herramientas",
-      link: "/tools",
-    },
-    {
-      name: "favoritos",
-      link: "/favoritos",
-    },
-  ];
+  const { user } = DataAuth();
+
+  // const toolsLinks = [
+  //   {
+  //     name: "Herramientas",
+  //     link: "/tools",
+  //   },
+  //   {
+  //     name: "favoritos",
+  //     link: "/favoritos",
+  //   },
+  // ];
 
   return (
     <nav className={styles.toolsMenu}>
-      {toolsLinks.map((item, index) => (
+      <NavLink
+        to={"/tools"}
+        className={`${({ isActive, isPending }) =>
+          isPending ? styles.linkPending : isActive ? styles.linkActive : ""} ${
+          styles.link
+        }`}
+      >
+        {"Herramientas"}
+      </NavLink>
+
+      {user && (
         <NavLink
-          to={item.link}
-          key={index}
+          to={"/tools/favoritos"}
           className={`${({ isActive, isPending }) =>
             isPending
               ? styles.linkPending
@@ -26,9 +38,9 @@ const ToolsMenu = () => {
               ? styles.linkActive
               : ""} ${styles.link}`}
         >
-          {item.name}
+          {"Favoritos"}
         </NavLink>
-      ))}
+      )}
     </nav>
   );
 };

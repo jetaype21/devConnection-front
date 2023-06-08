@@ -22,8 +22,7 @@
 .container_textContent {
   display: flex;
   flex-direction: column;
-  background-color: red;
-  /* gap: 1srem; */
+  gap: 2rem;
 }
 
 .title__seccion {
@@ -43,22 +42,9 @@
   color: var(--btn__color);
 }
 
-h2 {
-  color: white;
-  text-transform: capitalize;
-  font-size: 2rem;
-  margin-top: 0.5rem;
-}
-
-h2 + p {
-  margin-bottom: 1rem;
-  font-style: italic;
-}
-
 @media screen and (min-width: 768px) {
   .container_textContent {
     flex-direction: row;
-    background-color: red;
     gap: 2.5rem;
   }
 

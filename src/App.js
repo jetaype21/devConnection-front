@@ -11,7 +11,10 @@ import { DataAuth } from "./context/authContext";
 import { helpHttp } from "./utils/helpHttp";
 import { baseApiUrl } from "./utils/keysSession";
 import Tools from "./pages/tools/Tools";
-import ToolsMenu from "./components/container/toolsMenu/ToolsMenu";
+import ToolsBodyFavorites from "./components/container/toolsBodyFavorites/ToolsBodyFavorites";
+import ToolsBody from "./components/container/toolsBody/ToolsBody";
+import Service from "./pages/service/Service";
+import About from "./pages/about/About";
 
 const { get } = helpHttp();
 
@@ -25,14 +28,14 @@ function App() {
       setNotFund(data);
     });
 
-    // get(`${baseApiUrl}/tools`)
-    //   .then((tools) => {
-    //     setTools(tools.data.data);
-    //   })
-    //   .catch((err) => {
-    //     setTools([]);
-    //     // throw new Error(err);
-    //   });
+    get(`${baseApiUrl}/tools`)
+      .then((tools) => {
+        setTools(tools.data.data);
+      })
+      .catch((err) => {
+        setTools([]);
+        // throw new Error(err);
+      });
   }, []);
 
   //! USAR USER Y LA SECCION DE USER._JSON
@@ -43,9 +46,12 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/login" element={<Signup />} />
-        <Route path="/tools">
-          <Route index element={<Tools />} />
+        <Route path="/tools" element={<Tools />}>
+          <Route index element={<ToolsBody />} />
+          <Route path="favoritos" element={<ToolsBodyFavorites />} />
         </Route>
+        <Route path="/service" element={<Service />} />
+        <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       {!notFund && <FooterHome />}

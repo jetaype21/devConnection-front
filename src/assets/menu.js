@@ -18,8 +18,8 @@ export const footer = {
   ],
   blogs: [{ item: "visita a nuestro blog", link: "/" }],
   redes: [
-    { item: "facebook", link: "/facebook" },
-    { item: "linkdn", link: "/facebook" },
-    { item: "instagram", link: "/facebook" },
+    { item: "facebook", link: "https://www.linkedin.com/in/jetaypedev/" },
+    { item: "linkdn", link: "https://www.linkedin.com/in/jetaypedev/" },
+    { item: "instagram", link: "https://www.linkedin.com/in/jetaypedev/" },
   ],
 };

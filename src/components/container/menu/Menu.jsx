@@ -9,7 +9,6 @@ const Menu = ({ toogleMenu, showMenu, isMobile }) => {
   const closeMenu = () => {
     containerMenu.current.classList.add(styles.no__show__container);
     setTimeout(() => {
-      console.log("cerrando");
       toogleMenu(false);
     }, 900);
   };

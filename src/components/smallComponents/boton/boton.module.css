@@ -46,3 +46,9 @@
 .google_btn > span {
   margin-left: 10px;
 }
+
+.btn_logout {
+  padding: 10px 0;
+  width: 200px;
+  margin: 0 auto;
+}

@@ -27,7 +27,6 @@ const Header = () => {
         <code className={styles.name__company} style={{ marginBottom: "8px" }}>
           DevConnection
         </code>
-        {console.log("user", user)}
         {!user?.user_name ? (
           <BotonGoogle />
         ) : (

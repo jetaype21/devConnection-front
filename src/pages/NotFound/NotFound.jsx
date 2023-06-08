@@ -6,7 +6,6 @@ import Burbujas from "../../components/smallComponents/burbujas/Burbujas";
 
 const NotFound = () => {
   useEffect(() => {
-    console.log("enviando desde not");
     sharingInformationService.setSubject(true);
   }, []);
 

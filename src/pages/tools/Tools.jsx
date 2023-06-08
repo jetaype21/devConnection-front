@@ -1,9 +1,8 @@
-import { Route, Routes } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import ToolsMenu from "../../components/container/toolsMenu/ToolsMenu";
 import styles from "./tools.module.css";
 import { useEffect } from "react";
 import { sharingInformationService } from "../../services/shring-information.service";
-import ToolsBody from "../../components/container/toolsBody/ToolsBody";
 
 const Tools = () => {
   useEffect(() => {
@@ -13,7 +12,7 @@ const Tools = () => {
   return (
     <section className={styles.container}>
       <ToolsMenu />
-      <ToolsBody />
+      <Outlet />
     </section>
   );
 };

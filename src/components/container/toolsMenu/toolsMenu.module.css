@@ -1,6 +1,10 @@
 .toolsMenu {
   background-color: var(--btn__color);
   font-family: var(--font__josefi-sans);
+  position: fixed;
+  top: 90px;
+  z-index: 99;
+  width: 100%;
 }
 
 .link {

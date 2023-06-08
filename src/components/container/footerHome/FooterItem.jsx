@@ -7,6 +7,8 @@ const FooterItem = ({ item, link, color }) => {
       to={link}
       className={styles.footer_item}
       style={{ color: `${color ? color : ""}` }}
+      target="_blank"
+      referrerPolicy="no-referrer"
     >
       {item}
     </Link>

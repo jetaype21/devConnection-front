@@ -35,3 +35,27 @@
 .logo_img:hover {
   filter: grayscale(20%);
 }
+
+.container_user {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.container_user h3 {
+  /* font-size: calc(16px + (24 - 16) * ((900px - 300px) / (900 - 300))); */
+  font-size: 20px;
+}
+
+.container_user button {
+  background-color: var(--btn__color);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+
+.text_user {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+}
